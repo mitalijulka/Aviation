@@ -3,7 +3,7 @@
 """
 Created on Mon May 10 23:44:16 2021
 
-@author: Richard
+@author: MJ
 """
 
 import os
@@ -26,7 +26,7 @@ for i in range(1880,2022):
         # print(key)
         date_range_dict[key]=''
 
-nasa_path = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/station (1).csv'
+nasa_path = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/station (1).csv'
 nasa_df = pd.read_csv(nasa_path)
 drop_list = ['D-J-F',	'M-A-M',	'J-J-A',	'S-O-N',	'metANN']
 nasa_df = nasa_df.drop(drop_list,axis = 1)
@@ -60,7 +60,7 @@ for i,row in nasa_df.iterrows():
             date_range_dict[temp_key] = row[key]
             
             
-canada_path = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/en_climate_monthly_ON_6104146_1930-1996_P1M.csv'
+canada_path = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/en_climate_monthly_ON_6104146_1930-1996_P1M.csv'
             
 canada_df = pd.read_csv(canada_path)           
 
@@ -115,7 +115,7 @@ def process_nasa(file_path,date_range_dict):
                 date_range_dict[temp_key] = row[key]
     return date_range_dict
 
-nasa_path2 = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/station (2).csv'
+nasa_path2 = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/station (2).csv'
 
 
 date_range_dict_new = process_nasa(nasa_path2,date_range_dict)
@@ -126,7 +126,7 @@ for key in date_range_dict_new:
 
 
 
-nasa_path3 = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/station (3).csv'
+nasa_path3 = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/station (3).csv'
 
 date_range_dict_new2 = process_nasa(nasa_path3,date_range_dict_new)
 
@@ -134,7 +134,7 @@ for key in date_range_dict_new2:
     if date_range_dict_new[key] == '':
         print(key)
         
-nasa_path4 = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/station (4).csv'   
+nasa_path4 = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/station (4).csv'   
 
 date_range_dict_new2 = process_nasa(nasa_path4,date_range_dict_new2)
 
@@ -142,7 +142,7 @@ for key in date_range_dict_new2:
     if date_range_dict_new[key] == '':
         print(key)    
         
-nasa_path5 = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/station (5).csv'   
+nasa_path5 = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/station (5).csv'   
 
 date_range_dict_new2 = process_nasa(nasa_path5,date_range_dict_new2)
 
@@ -153,7 +153,7 @@ for key in date_range_dict_new2:
         
         
         
-nasa_path6 = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/station (6).csv'   
+nasa_path6 = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/station (6).csv'   
 
 date_range_dict_new2 = process_nasa(nasa_path6,date_range_dict_new2)
 
@@ -162,7 +162,7 @@ for key in date_range_dict_new2:
         print(key) 
         
         
-nasa_path7 = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/station (7).csv'   
+nasa_path7 = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/station (7).csv'   
 
 date_range_dict_new2 = process_nasa(nasa_path7,date_range_dict_new2)
 
@@ -177,7 +177,7 @@ for key in date_range_dict_new2:
     temp_row = [key,date_range_dict_new2[key]]
     output.append(temp_row)
     
-output_file = r'/Users/Richard/Desktop/Queens_MFIT/867/a2/kingston_weather.csv'  
+output_file = r'/Users/MJ/Desktop/Queens_MFIT/867/a2/kingston_weather.csv'  
 with open(output_file,'w') as csvfile:
     writer = csv.writer(csvfile)
     for row in output:
